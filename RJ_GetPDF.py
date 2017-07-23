@@ -11,9 +11,9 @@ import requests, os, time
 start_time = time.time()
 
 ## Description:
-## This function takes as the URL of the .pdfs containing daily Rajasthan rainfall data 
-## It creates a directory to store the files
-## It writes each file to the created directory
+## This function takes as the URL of the .pdfs containing daily Rajasthan rainfall data. 
+## It creates a directory to store the files.
+## It writes each file to the created directory.
 
 def downloadRain(year, end_year):
 	
