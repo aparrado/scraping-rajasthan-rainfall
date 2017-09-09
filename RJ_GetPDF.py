@@ -20,7 +20,7 @@ def downloadRain(year, end_year):
 	## Storing current working directory 
 	current_dir = "/Users/Akshat/Desktop/RJ_Rainfall/"
 
-	while not year > end_year: 
+	while year <= end_year: 
 		
 		## Get PDF and store as a response object
 		res = requests.get("http://www.water.rajasthan.gov.in/content/dam/water/water-resources-department/AnnualRainfall/Print%20" + str(format(year, '04d')) + ".pdf")
@@ -33,11 +33,11 @@ def downloadRain(year, end_year):
 			## Write command
 			f.write(res.content)
     
-    	#Update year
+    		## Update year
 		year = year + 1 
 		
 		
-#Testing function 
+## Testing function 
 
 downloadRain(1957,2015)
 print("Done!")
