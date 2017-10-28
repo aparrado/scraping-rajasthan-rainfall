@@ -16,25 +16,25 @@ start_time = time.time()
 # It writes each file to the created directory.
 def downloadRain(year, end_year):
 	
-	## Storing current working directory 
+	# Storing current working directory 
 	current_dir = "/Users/Akshat/Desktop/RJ_Rainfall/"
 
 	while year <= end_year: 
 		
-		## Get PDF and store as a response object
+		# Get PDF and store as a response object
 		res = requests.get("http://www.water.rajasthan.gov.in" + 
 				   "/content/dam/water/water-resources-department/AnnualRainfall/Print%20" 
 				   + str(format(year, '04d')) + ".pdf")
 		type(res)  
 		res.status_code == requests.codes.ok
 	
-		## Write PDF to hard drive
+		# Write PDF to hard drive
 		with open( current_dir + str(format(year, '04d')) + ".pdf", 'wb') as f:
 			
-			## Write command
+			# Write command
 			f.write(res.content)
     
-    		## Update year
+    		# Update year
 		year = year + 1 
 		
 		
